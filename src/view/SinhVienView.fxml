@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane  xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.SinhVienController">
+
+    <top>
+        <Label text="QUẢN LÝ SINH VIÊN"
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-padding: 10;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+            <HBox spacing="10">
+                <TextField fx:id="tfMaSV" promptText="Mã sinh viên" />
+                <TextField fx:id="tfHoTen" promptText="Họ tên" />
+                <DatePicker fx:id="dpNgaySinh" promptText="Ngày sinh" />
+                <ComboBox fx:id="cbGioiTinh" promptText="Giới tính" />
+            </HBox>
+
+            <HBox spacing="10">
+                <TextField fx:id="tfQueQuan" promptText="Quê quán" />
+                <TextField fx:id="tfKhoa" promptText="Khóa" />
+                <TextField fx:id="tfLop" promptText="Lớp" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Button text="Thêm" onAction="#themSinhVien"/>
+                <Button text="Sửa" onAction="#suaSinhVien"/>
+                <Button text="Xóa" onAction="#xoaSinhVien"/>
+                <TextField fx:id="tfTimKiem" promptText="Tìm mã hoặc tên sinh viên" />
+                
+            </HBox>
+
+            <TableView fx:id="tableSV" prefWidth="600" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="colMaSV" text="Mã SV" prefWidth="100"/>
+                    <TableColumn fx:id="colHoTen" text="Họ tên" prefWidth="160"/>
+                    <TableColumn fx:id="colNgaySinh" text="Ngày sinh" prefWidth="120"/>
+                    <TableColumn fx:id="colGioiTinh" text="Giới tính" prefWidth="80"/>
+                    <TableColumn fx:id="colQueQuan" text="Quê quán" prefWidth="120"/>
+                    <TableColumn fx:id="colKhoa" text="Khóa" prefWidth="80"/>
+                    <TableColumn fx:id="colLop" text="Lớp" prefWidth="80"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
